@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDIP - Universal Document Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Highlight.js for JSON formatting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>UDIP</h1>
+            </div>
+            <nav>
+                <a href="#" class="nav-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    Extract Document
+                </a>
+                <a href="/docs" target="_blank" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    API Documentation
+                </a>
+            </nav>
+            <div class="supported-formats">
+                <h3>Supported Formats</h3>
+                <div class="badges">
+                    <span class="badge">PDF</span>
+                    <span class="badge">DOCX</span>
+                    <span class="badge">CSV</span>
+                    <span class="badge">XLSX</span>
+                    <span class="badge">PNG</span>
+                    <span class="badge">JPEG</span>
+                    <span class="badge">TXT</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h2>Document Extraction Engine</h2>
+                <p>Upload any document to extract structured JSON data automatically.</p>
+            </header>
+
+            <div class="workspace">
+                <!-- Upload Panel -->
+                <div class="panel upload-panel">
+                    <div class="drop-zone" id="drop-zone">
+                        <div class="drop-zone-content">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                            <h3>Drag & Drop your document here</h3>
+                            <p>or click to browse from your computer</p>
+                            <input type="file" id="file-input" hidden>
+                            <button class="btn-primary" id="browse-btn">Browse Files</button>
+                        </div>
+                    </div>
+                    
+                    <div class="file-status hidden" id="file-status">
+                        <div class="file-info">
+                            <div class="file-icon">📄</div>
+                            <div class="file-details">
+                                <span class="file-name" id="file-name">document.pdf</span>
+                                <span class="file-size" id="file-size">1.2 MB</span>
+                            </div>
+                        </div>
+                        <button class="btn-extract" id="extract-btn">Extract Data <span class="loader hidden" id="btn-loader"></span></button>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="panel results-panel hidden" id="results-panel">
+                    <div class="results-header">
+                        <h3>Extraction Results</h3>
+                        <div class="actions">
+                            <button class="btn-secondary" id="export-json">Copy JSON</button>
+                            <button class="btn-secondary" id="reset-btn">New File</button>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <span class="stat-label">Document Type</span>
+                            <span class="stat-value" id="res-type">-</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Extractor Used</span>
+                            <span class="stat-value" id="res-extractor">-</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Processing Time</span>
+                            <span class="stat-value" id="res-time">-</span>
+                        </div>
+                    </div>
+
+                    <div class="json-container">
+                        <pre><code class="language-json" id="json-output"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

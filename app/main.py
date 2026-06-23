@@ -108,6 +108,12 @@ def create_app() -> FastAPI:
             "version": settings.APP_VERSION,
         }
 
+    # ── Frontend ──────────────────────────────────────────────────────────────
+    from fastapi.staticfiles import StaticFiles
+    import os
+    if os.path.exists("static"):
+        app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
     return app
 
 
