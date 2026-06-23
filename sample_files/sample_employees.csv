@@ -1,0 +1,9 @@
+employee_id,name,department,salary,joining_date,email
+EMP001,Alice Johnson,Engineering,95000,2023-03-15,alice.johnson@company.com
+EMP002,Bob Smith,Marketing,72000,2022-07-01,bob.smith@company.com
+EMP003,Carol White,Finance,88000,2021-11-20,carol.white@company.com
+EMP004,David Brown,Engineering,102000,2023-08-10,david.brown@company.com
+EMP005,Eva Martinez,HR,65000,2024-01-05,eva.martinez@company.com
+EMP006,Frank Lee,Engineering,98000,2022-12-01,frank.lee@company.com
+EMP007,Grace Kim,Finance,91000,2023-05-25,grace.kim@company.com
+EMP008,Henry Wilson,Marketing,78000,2024-02-14,henry.wilson@company.com

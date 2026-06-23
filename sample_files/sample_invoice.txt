@@ -1,0 +1,31 @@
+INVOICE
+=======
+
+Invoice Number: INV-2026-0042
+Date: 2026-06-18
+Due Date: 2026-07-18
+
+Bill To:
+Name: John Doe
+Email: john.doe@example.com
+Phone: +91-9876543210
+Address: 123 Main Street, Mumbai, Maharashtra 400001
+
+Bill From:
+Company: Acme Solutions Pvt. Ltd.
+Email: billing@acmesolutions.com
+
+Items:
+------
+1. Software Development Services   - $15,000
+2. Cloud Hosting (Annual)          - $8,000
+3. Support & Maintenance           - $7,000
+                                   ---------
+                          Subtotal:  $30,000
+                               Tax:   $5,400
+                     Grand Total:   $35,400
+
+Payment Method: Bank Transfer
+Account No: XXXX-XXXX-4321
+
+Thank you for your business!
