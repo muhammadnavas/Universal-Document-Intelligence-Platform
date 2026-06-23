@@ -104,6 +104,17 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 ---
 
+## Web Interface
+
+UDIP includes a premium, dark-mode web interface to easily test the extraction capabilities without using command-line tools.
+
+1. Start the server (`uvicorn app.main:app --host 0.0.0.0 --port 8000`).
+2. Navigate to **http://localhost:8000** in your web browser.
+3. Drag and drop any supported file (PDF, DOCX, CSV, PNG, etc.) into the drop zone.
+4. Click **Extract Data** to view the resulting JSON payload with syntax highlighting.
+
+---
+
 ## API Reference
 
 ### `POST /upload`
